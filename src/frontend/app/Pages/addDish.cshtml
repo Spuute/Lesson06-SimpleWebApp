@@ -4,6 +4,14 @@
 }
 
 <form method="post">
-    <input type="name" name="dishname">
-    <input type="submit">
+    <table>
+        <tr>
+            <td>Recipe name:</td>
+            <td><input type="text" name="Name"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" asp-page-handler="Submit"/></td>
+        </tr>
+    </table>
 </form>

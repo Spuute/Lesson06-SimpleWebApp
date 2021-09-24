@@ -8,7 +8,17 @@
 
 @foreach (var aa in Model.Test)
 {
-        <h2>@Html.DisplayFor(m => aa.Name)</h2>
+    <div class="card-deck">
+        @* <h2>@Html.DisplayFor(m => aa.Name)</h2> *@
+        <div class="card text-center border-primary mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Bild på maträtt">
+            <div class="card-body">
+               <h5 class="card-title">@Html.DisplayFor(m => aa.Name)</h5>
+               <p class="card-text">Här kommer beskrivning synas när applikationen utökas</p>
+               <a href="#" class="btn btn-primary">Läs mer</a>
+            </div>
+        </div>
+    </div>
 }
 
 
