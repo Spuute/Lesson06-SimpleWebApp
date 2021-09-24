@@ -1,0 +1,14 @@
+﻿@page
+@model dishesModel
+@{
+    ViewData["Title"] = "Dishes";
+}
+<h3>Sparade recept</h3>
+
+
+@foreach (var aa in Model.Test)
+{
+        <h2>@Html.DisplayFor(m => aa.Name)</h2>
+}
+
+
