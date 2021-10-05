@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -13,7 +14,19 @@ namespace app
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            var logger = host.Services.GetRequiredService<ILogger<Program>>();
+            
+            try
+            {    
+                logger.LogInformation("The application has started");
+                host.Run();
+            }
+            catch (System.Exception ex)
+            {
+                logger.LogCritical(ex, ex.Message);
+            }
+            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
