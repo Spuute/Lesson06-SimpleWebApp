@@ -8,6 +8,7 @@ namespace app.Pages
     public class Recipe
     {
         public string Name { get; set; }
-        public int test { get; set; }
+        public string PhotoUrl { get; set; }
+        public string Description { get; set; }
     }
 }

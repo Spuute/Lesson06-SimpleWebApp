@@ -16,17 +16,19 @@ namespace app.Pages
         {
             _logger = logger;
         }
-        public List<Recipe> Test;
+
+       
+        public List<Recipe> Recipes;
 
         public void OnGet()
         {
             try
             {
                 var client = new RestClient("https://restapi-cosmosdb.azurewebsites.net/api");
-                var request = new RestRequest($"/recipe?", DataFormat.Json);
+                var request = new RestRequest($"/recipes", DataFormat.Json);
 
                 var response = client.Execute<List<Recipe>>(request);
-                Test = response.Data;
+                Recipes = response.Data;
                 _logger.LogInformation($"Successfull read from db");
             }
             catch (System.Exception ex)

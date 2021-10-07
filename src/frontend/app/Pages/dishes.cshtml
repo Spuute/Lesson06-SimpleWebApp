@@ -1,20 +1,18 @@
 ﻿@page
-@model dishesModel
+@model app.Pages.dishesModel
 @{
     ViewData["Title"] = "Dishes";
 }
 <center><h2>All recipes</h2></center>
 
 
-@foreach (var aa in Model.Test)
-{
-    <div class="card-deck">
-        @* <h2>@Html.DisplayFor(m => aa.Name)</h2> *@
+@foreach (var recipe in Model.Recipes){
+        <div class="card-deck">
         <div class="card text-center border-primary mb-3" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Bild på maträtt">
+            <img class="card-img-top" src="@Html.DisplayFor(m => recipe.PhotoUrl)" alt="Bild på maträtt">
             <div class="card-body">
-               <h5 class="card-title">@Html.DisplayFor(m => aa.Name)</h5>
-               <p class="card-text">Här kommer beskrivning synas när applikationen utökas</p>
+               <h5 class="card-title">@Html.DisplayFor(m => recipe.Name)</h5>
+               <p class="card-text">@Html.DisplayFor(m => recipe.Description)</p>
                <a href="#" class="btn btn-primary">Läs mer</a>
             </div>
         </div>
