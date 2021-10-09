@@ -23,11 +23,8 @@ namespace app.Pages
             _logger = logger;
         }
 
-        
         public string Name { get; set; }
-       
         public string Description1 { get; set; }
-       
         public IFormFile Photo1 { get; set; }
         public void OnPost()
         {
